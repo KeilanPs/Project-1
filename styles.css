@@ -15,6 +15,7 @@
   box-sizing: border-box;
 }
 
+/* Base element selector: set a calm canvas and readable text across all pages. */
 body {
   margin: 0;
   background: var(--canvas);
@@ -57,6 +58,7 @@ a:focus-visible {
   border-bottom: 1px solid var(--line);
 }
 
+/* Flexbox balances the site name and menu; the menu wraps as space gets tight. */
 .header-inner {
   display: flex;
   align-items: center;
@@ -75,6 +77,7 @@ a:focus-visible {
   text-decoration: none;
 }
 
+/* Flexbox keeps each navigation link in a tidy, wrapping row. */
 .main-nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -106,6 +109,12 @@ main {
   padding: 2.5rem 1.5rem 4rem;
 }
 
+/* ID selector: leave a little breathing room when skip links jump to the content. */
+#main-content {
+  scroll-margin-top: 1rem;
+}
+
+/* Grid gives the introduction and illustration separate columns on wide screens. */
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
@@ -204,6 +213,7 @@ h2 {
   max-width: 850px;
 }
 
+/* This grid lets the contents links fill available columns without fixed widths. */
 .contents-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
@@ -274,6 +284,7 @@ pre code {
   background: var(--highlight);
 }
 
+/* Grid makes the three layout roles easy to compare side by side. */
 .layout-example {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -290,6 +301,7 @@ pre code {
   text-align: center;
 }
 
+/* Concept cards reflow into as many columns as the screen can comfortably fit. */
 .concept-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
@@ -355,6 +367,7 @@ pre code {
   margin: 0.25rem 0;
 }
 
+/* Stack the header and hero when the viewport no longer has room for columns. */
 @media (max-width: 760px) {
   .header-inner {
     align-items: flex-start;

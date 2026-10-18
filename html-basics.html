@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn how HTML elements create the structure and meaning of a web page.">
+  <title>HTML Basics | Web Development Fundamentals</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Web Fundamentals</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="html-basics.html" aria-current="page">HTML Basics</a></li>
+          <li><a href="css-basics.html">CSS Basics</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" class="page-layout">
+    <header class="page-intro">
+      <p class="eyebrow">Topic 01</p>
+      <h1>HTML: give content meaning</h1>
+      <p class="lead">HTML (HyperText Markup Language) describes the structure of a web page. Its elements tell browsers and assistive technologies what each piece of content is.</p>
+    </header>
+    <section class="content-section">
+      <h2>Anatomy of an HTML element</h2>
+      <p>Most elements use an opening tag, content, and a closing tag. For example, a paragraph is written as <code>&lt;p&gt;A short paragraph.&lt;/p&gt;</code>. Some elements, such as images, do not wrap text and are written differently.</p>
+      <pre><code>&lt;h1&gt;A page heading&lt;/h1&gt;
+&lt;p&gt;A paragraph that explains the topic.&lt;/p&gt;
+&lt;img src="photo.jpg" alt="A descriptive text alternative"&gt;</code></pre>
+      <p>Attributes provide extra information. The <code>src</code> attribute identifies an image file, while <code>alt</code> supplies a text alternative describing its purpose.</p>
+    </section>
+    <section class="content-section">
+      <h2>Build a useful document outline</h2>
+      <ul>
+        <li>Use one clear <code>&lt;h1&gt;</code> to identify the page's main subject.</li>
+        <li>Organize sections with headings in a meaningful order.</li>
+        <li>Use lists for related items, and tables only for data with relationships.</li>
+        <li>Choose semantic elements such as <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> when they fit.</li>
+      </ul>
+    </section>
+    <aside class="callout">
+      <h2>Good markup is more than appearance</h2>
+      <p>Semantic HTML helps people navigate with assistive technology, makes documents easier to maintain, and gives browsers useful information about the content.</p>
+    </aside>
+    <p class="next-step">Next: learn how <a href="css-basics.html">CSS styles and arranges HTML</a>.</p>
+  </main>
+  <footer class="site-footer"><p>IT 3203 · Web Development Fundamentals</p><p><a href="references.html">Sources and further reading</a></p></footer>
+</body>
+</html>

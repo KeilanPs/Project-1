@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-labelledby="title desc">
+  <title id="title">Web page blueprint</title>
+  <desc id="desc">A browser window containing labeled blocks for HTML structure, CSS style, and page content.</desc>
+  <rect width="480" height="360" rx="24" fill="#e0f2f1"/>
+  <rect x="48" y="48" width="384" height="264" rx="14" fill="#fff" stroke="#18324b" stroke-width="4"/>
+  <path d="M48 90h384" stroke="#18324b" stroke-width="4"/>
+  <circle cx="74" cy="69" r="7" fill="#d97735"/>
+  <circle cx="98" cy="69" r="7" fill="#087e8b"/>
+  <circle cx="122" cy="69" r="7" fill="#18324b"/>
+  <rect x="76" y="117" width="143" height="157" rx="9" fill="#18324b"/>
+  <text x="147" y="187" fill="#fff" font-family="Arial, sans-serif" font-size="28" font-weight="700" text-anchor="middle">HTML</text>
+  <text x="147" y="222" fill="#c9e8e7" font-family="Arial, sans-serif" font-size="15" text-anchor="middle">structure</text>
+  <rect x="237" y="117" width="167" height="66" rx="9" fill="#087e8b"/>
+  <text x="320" y="158" fill="#fff" font-family="Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle">CSS style</text>
+  <rect x="237" y="199" width="167" height="75" rx="9" fill="#f2f7fa" stroke="#cfdee7" stroke-width="2"/>
+  <path d="M257 220h126M257 237h100M257 254h112" stroke="#526579" stroke-linecap="round" stroke-width="7"/>
+</svg>

@@ -106,12 +106,15 @@ a:focus-visible {
   transition: background-color 160ms ease, color 160ms ease;
 }
 
-.main-nav a:hover,
-.main-nav a[aria-current="page"] {
+.main-nav a:hover {
   background: var(--highlight);
   color: var(--accent-dark);
+}
+
+.main-nav a[aria-current="page"] {
+  background: var(--accent-dark);
+  color: var(--paper);
   font-weight: 750;
-  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 main {
@@ -448,6 +451,16 @@ h2 {
 
 .page-layout {
   max-width: 900px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 0 1.5rem;
+}
+
+.profile-grid .content-section {
+  margin-top: 0;
 }
 
 /* This grid lets the contents links fill available columns without fixed widths. */

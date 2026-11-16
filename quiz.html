@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Test your understanding of HTML, CSS, accessibility, and responsive web design.">
+  <title>Self-Assessment Quiz | Web Development Fundamentals</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="quiz.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-name" href="index.html">Web Fundamentals</a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="html-basics.html">HTML Basics</a></li>
+          <li><a href="css-basics.html">CSS Basics</a></li>
+          <li><a href="key-concepts.html">Key Concepts</a></li>
+          <li><a href="quiz.html" aria-current="page">Self-Assessment Quiz</a></li>
+          <li><a href="references.html">References</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content" class="page-layout">
+    <header class="page-intro quiz-intro">
+      <div>
+        <p class="eyebrow">Knowledge check · 10 questions</p>
+        <h1>Web fundamentals self-assessment</h1>
+        <p class="lead">Review what you have learned about HTML, CSS, accessibility, and responsive design. You have ten minutes; each question is worth one point, and 7 points is a passing score.</p>
+      </div>
+      <p class="quiz-timer" aria-label="Time remaining">
+        Time remaining: <span id="quiz-timer" role="timer" aria-live="off">10:00</span>
+      </p>
+    </header>
+
+    <section id="quiz-result" class="quiz-result" aria-live="polite" tabindex="-1" hidden>
+      <h2 id="result-heading"></h2>
+      <p id="result-summary" class="quiz-score"></p>
+      <p id="result-time"></p>
+      <p id="result-timeout"></p>
+      <h3>Question-by-question review</h3>
+      <ol id="quiz-review" class="quiz-review"></ol>
+      <button class="quiz-button quiz-button--secondary" id="retake-quiz" type="button">Retake quiz</button>
+    </section>
+
+    <form id="quiz-form" class="quiz-form">
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 1.</span> Fill in the blank: The markup language that describes the structure and meaning of web content is ______.</legend>
+        <label for="q1">Your answer</label>
+        <input id="q1" name="q1" type="text" autocomplete="off">
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 2.</span> Fill in the blank: The stylesheet language used to control a page's visual presentation is ______.</legend>
+        <label for="q2">Your answer</label>
+        <input id="q2" name="q2" type="text" autocomplete="off">
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 3.</span> Which HTML element is the best semantic landmark for the page's primary content?</legend>
+        <div class="quiz-options">
+          <label><input type="radio" name="q3" value="main"> <span><code>&lt;main&gt;</code></span></label>
+          <label><input type="radio" name="q3" value="div"> <span><code>&lt;div&gt;</code></span></label>
+          <label><input type="radio" name="q3" value="b"> <span><code>&lt;b&gt;</code></span></label>
+          <label><input type="radio" name="q3" value="br"> <span><code>&lt;br&gt;</code></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 4.</span> In a CSS rule, what does the selector do?</legend>
+        <div class="quiz-options">
+          <label><input type="radio" name="q4" value="target"> <span>Identifies which HTML elements the declarations style</span></label>
+          <label><input type="radio" name="q4" value="content"> <span>Supplies the text content displayed on the page</span></label>
+          <label><input type="radio" name="q4" value="metadata"> <span>Loads an image into the document</span></label>
+          <label><input type="radio" name="q4" value="browser"> <span>Chooses which browser opens the page</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 5.</span> Which attribute provides alternative text for an image?</legend>
+        <div class="quiz-options">
+          <label><input type="radio" name="q5" value="alt"> <span><code>alt</code></span></label>
+          <label><input type="radio" name="q5" value="href"> <span><code>href</code></span></label>
+          <label><input type="radio" name="q5" value="class"> <span><code>class</code></span></label>
+          <label><input type="radio" name="q5" value="style"> <span><code>style</code></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 6.</span> What is the main purpose of responsive design?</legend>
+        <div class="quiz-options">
+          <label><input type="radio" name="q6" value="adapt"> <span>To adapt a layout to different screen sizes and devices</span></label>
+          <label><input type="radio" name="q6" value="animate"> <span>To add animation to every page element</span></label>
+          <label><input type="radio" name="q6" value="hide"> <span>To hide all content on small screens</span></label>
+          <label><input type="radio" name="q6" value="print"> <span>To replace HTML with a stylesheet</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 7.</span> Select all practices that support accessibility. (Select three.)</legend>
+        <div class="quiz-options">
+          <label><input type="checkbox" name="q7" value="semantic"> <span>Use meaningful semantic HTML elements</span></label>
+          <label><input type="checkbox" name="q7" value="alt"> <span>Provide useful alternative text for informative images</span></label>
+          <label><input type="checkbox" name="q7" value="keyboard"> <span>Make interactive controls usable with a keyboard</span></label>
+          <label><input type="checkbox" name="q7" value="color"> <span>Use color alone to communicate important meaning</span></label>
+          <label><input type="checkbox" name="q7" value="remove"> <span>Remove headings to make a page look simpler</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 8.</span> True or false: A class selector in CSS begins with a period, such as <code>.card</code>.</legend>
+        <div class="quiz-options">
+          <label><input type="radio" name="q8" value="true"> <span>True</span></label>
+          <label><input type="radio" name="q8" value="false"> <span>False</span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 9.</span> Which element is generally used to group a standalone thematic section of a page?</legend>
+        <label for="q9">Choose one answer</label>
+        <select id="q9" name="q9">
+          <option value="">Select an element</option>
+          <option value="section">&lt;section&gt;</option>
+          <option value="span">&lt;span&gt;</option>
+          <option value="img">&lt;img&gt;</option>
+          <option value="input">&lt;input&gt;</option>
+        </select>
+      </fieldset>
+
+      <fieldset class="quiz-question">
+        <legend><span class="question-number">Question 10.</span> True or false: CSS declarations are written as a property and value separated by a colon, such as <code>color: teal;</code>.</legend>
+        <div class="quiz-options">
+          <label><input type="radio" name="q10" value="true"> <span>True</span></label>
+          <label><input type="radio" name="q10" value="false"> <span>False</span></label>
+        </div>
+      </fieldset>
+
+      <div class="quiz-actions">
+        <button class="quiz-button" type="submit">Submit answers</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <p>IT 3203 · Web Development Fundamentals</p>
+    <p><a href="references.html">Sources and further reading</a></p>
+  </footer>
+</body>
+</html>

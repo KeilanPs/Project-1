@@ -12,15 +12,15 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="site-name" href="index.html">Web Fundamentals</a>
-      <!-- Keep this navigation consistent so readers can move between topics on every page. -->
+      <!-- This shared menu keeps the site navigation consistent on every page. -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="html-basics.html" aria-current="page">HTML Basics</a></li>
           <li><a href="css-basics.html">CSS Basics</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
-          <li><a href="quiz.html">Self-Assessment Quiz</a></li>
-          <li><a href="references.html">References</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">Resources</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
@@ -30,15 +30,28 @@
     <header class="page-intro">
       <p class="eyebrow">Topic 01</p>
       <h1>HTML: give content meaning</h1>
-      <p class="lead">HTML (HyperText Markup Language) describes the structure of a web page. Its elements tell browsers and assistive technologies what each piece of content is.</p>
+      <p class="lead">HTML (HyperText Markup Language) describes the structure of a web page. Its elements tell browsers and assistive technologies what each piece of content is. Good markup makes information easier to navigate, understand, and maintain.</p>
     </header>
     <section class="content-section">
       <h2>Anatomy of an HTML element</h2>
       <p>Most elements use an opening tag, content, and a closing tag. For example, a paragraph is written as <code>&lt;p&gt;A short paragraph.&lt;/p&gt;</code>. Some elements, such as images, do not wrap text and are written differently.</p>
+      <!-- This small example shows how tags, attributes, and readable text fit together. -->
       <pre><code>&lt;h1&gt;A page heading&lt;/h1&gt;
 &lt;p&gt;A paragraph that explains the topic.&lt;/p&gt;
 &lt;img src="photo.jpg" alt="A descriptive text alternative"&gt;</code></pre>
       <p>Attributes provide extra information. The <code>src</code> attribute identifies an image file, while <code>alt</code> supplies a text alternative describing its purpose.</p>
+    </section>
+    <section class="content-section">
+      <h2>Start with a meaningful document</h2>
+      <p>A document's outline and landmarks help people scan a page and help software identify its regions. Use headings to introduce sections, <code>&lt;main&gt;</code> for the primary content, and <code>&lt;nav&gt;</code> for groups of navigation links. A heading level should reflect the content hierarchy rather than its visual size.</p>
+      <pre><code>&lt;main&gt;
+  &lt;h1&gt;A page about gardens&lt;/h1&gt;
+  &lt;section aria-labelledby="herbs-heading"&gt;
+    &lt;h2 id="herbs-heading"&gt;Growing herbs&lt;/h2&gt;
+    &lt;p&gt;Choose a sunny place and well-drained soil.&lt;/p&gt;
+  &lt;/section&gt;
+&lt;/main&gt;</code></pre>
+      <p class="code-caption">A section with a heading gives related content a clear name.</p>
     </section>
     <section class="content-section">
       <h2>Build a useful document outline</h2>
@@ -47,11 +60,13 @@
         <li>Organize sections with headings in a meaningful order.</li>
         <li>Use lists for related items, and tables only for data with relationships.</li>
         <li>Choose semantic elements such as <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code> when they fit.</li>
+        <li>Give form controls visible, programmatically associated labels.</li>
+        <li>Use descriptive link text so the destination makes sense out of context.</li>
       </ul>
     </section>
     <aside class="callout">
-      <h2>Good markup is more than appearance</h2>
-      <p>Semantic HTML helps people navigate with assistive technology, makes documents easier to maintain, and gives browsers useful information about the content.</p>
+      <h2>Choose native elements first</h2>
+      <p>A real button, link, heading, or form control already has behavior and meaning that browsers and assistive technologies understand. Prefer the appropriate HTML element over recreating it with generic containers.</p>
     </aside>
     <p class="next-step">Next: learn how <a href="css-basics.html">CSS styles and arranges HTML</a>.</p>
   </main>

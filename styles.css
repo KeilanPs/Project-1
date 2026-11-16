@@ -1,13 +1,15 @@
 :root {
   color-scheme: light;
-  --ink: #18324b;
-  --muted: #526579;
-  --paper: #ffffff;
-  --canvas: #f2f7fa;
+  --ink: #162f46;
+  --muted: #506478;
+  --paper: #fff;
+  --canvas: #f3f7f8;
   --accent: #087e8b;
   --accent-dark: #075e69;
-  --line: #cfdee7;
-  --highlight: #e0f2f1;
+  --line: #d3e0e5;
+  --highlight: #e3f3f1;
+  --warm: #fff4e8;
+  --shadow: 0 12px 32px rgb(22 47 70 / 8%);
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
@@ -18,7 +20,9 @@
 /* Base element selector: set a calm canvas and readable text across all pages. */
 body {
   margin: 0;
-  background: var(--canvas);
+  background:
+    radial-gradient(ellipse at 50% 0, rgb(8 126 139 / 7%), transparent 34rem),
+    var(--canvas);
   color: var(--ink);
   font-size: 1rem;
   line-height: 1.65;
@@ -31,7 +35,7 @@ a {
 }
 
 a:hover {
-  color: #a34224;
+  color: #9a3e21;
 }
 
 a:focus-visible {
@@ -43,7 +47,7 @@ a:focus-visible {
   position: absolute;
   top: -5rem;
   left: 1rem;
-  z-index: 2;
+  z-index: 10;
   padding: 0.6rem 0.9rem;
   background: var(--paper);
   border: 2px solid var(--accent);
@@ -54,6 +58,8 @@ a:focus-visible {
 }
 
 .site-header {
+  position: relative;
+  z-index: 1;
   background: var(--paper);
   border-bottom: 1px solid var(--line);
 }
@@ -64,7 +70,7 @@ a:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 1rem 1.5rem;
 }
@@ -72,8 +78,9 @@ a:focus-visible {
 .site-name {
   flex: 0 0 auto;
   color: var(--ink);
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 750;
+  letter-spacing: -0.02em;
   text-decoration: none;
 }
 
@@ -89,21 +96,26 @@ a:focus-visible {
 }
 
 .main-nav a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
   padding: 0.4rem 0.55rem;
   border-radius: 0.35rem;
   font-size: 0.92rem;
   text-decoration: none;
+  transition: background-color 160ms ease, color 160ms ease;
 }
 
 .main-nav a:hover,
 .main-nav a[aria-current="page"] {
   background: var(--highlight);
   color: var(--accent-dark);
+  font-weight: 750;
+  box-shadow: inset 0 -2px 0 var(--accent);
 }
 
 main {
-  max-width: 960px;
+  max-width: 1120px;
   min-height: 65vh;
   margin: 0 auto;
   padding: 2.5rem 1.5rem 4rem;
@@ -119,8 +131,13 @@ main {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(220px, 0.75fr);
   align-items: center;
-  gap: 2.5rem;
-  padding: 2rem 0 3rem;
+  gap: 3rem;
+  margin: 0 -0.5rem 2rem;
+  padding: clamp(2rem, 5vw, 4rem);
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  background: linear-gradient(125deg, var(--paper) 48%, #eaf5f3);
+  box-shadow: var(--shadow);
 }
 
 .hero-copy {
@@ -134,7 +151,7 @@ main {
   margin: 0 auto;
   border: 1px solid var(--line);
   border-radius: 1rem;
-  box-shadow: 0 12px 32px rgb(24 50 75 / 10%);
+  box-shadow: var(--shadow);
 }
 
 .eyebrow {
@@ -181,24 +198,37 @@ h2 {
   color: white;
   font-weight: 700;
   text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
 }
 
 .button-link:hover {
   background: #064650;
   color: white;
+  transform: translateY(-1px);
 }
 
 .content-section {
   margin: 1.5rem 0;
-  padding: 1.5rem;
+  padding: clamp(1.15rem, 3vw, 1.75rem);
   border: 1px solid var(--line);
-  border-radius: 0.8rem;
+  border-radius: 0.9rem;
   background: var(--paper);
+  box-shadow: 0 4px 16px rgb(22 47 70 / 4%);
+}
+
+.content-section h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .content-section > :last-child,
 .callout > :last-child {
   margin-bottom: 0;
+}
+
+.content-section p,
+.content-section li {
+  max-width: 78ch;
 }
 
 .quiz-intro {
@@ -233,6 +263,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: 0.75rem;
   background: var(--paper);
+  box-shadow: 0 4px 16px rgb(22 47 70 / 4%);
 }
 
 .quiz-question legend {
@@ -267,6 +298,10 @@ h2 {
 .quiz-options label:has(input:checked) {
   border-color: var(--accent);
   background: var(--highlight);
+}
+
+.quiz-options label:hover {
+  border-color: #8db9bd;
 }
 
 .quiz-form input[type="text"],
@@ -403,6 +438,8 @@ h2 {
 
 .page-intro {
   margin: 0 0 2rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
 }
 
 .page-intro h1 {
@@ -410,7 +447,7 @@ h2 {
 }
 
 .page-layout {
-  max-width: 850px;
+  max-width: 900px;
 }
 
 /* This grid lets the contents links fill available columns without fixed widths. */
@@ -424,6 +461,7 @@ h2 {
 
 .table-wrap {
   overflow-x: auto;
+  border-radius: 0.55rem;
 }
 
 table {
@@ -447,6 +485,10 @@ td {
 
 thead {
   background: var(--highlight);
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fafb;
 }
 
 tbody th {
@@ -481,7 +523,7 @@ pre code {
   padding: 1.4rem 1.5rem;
   border-left: 5px solid var(--accent);
   border-radius: 0.35rem;
-  background: var(--highlight);
+  background: linear-gradient(115deg, var(--highlight), #f2faf8);
 }
 
 /* Grid makes the three layout roles easy to compare side by side. */
@@ -501,6 +543,38 @@ pre code {
   text-align: center;
 }
 
+.code-caption {
+  margin: -0.5rem 0 1rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.learning-path {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.learning-path li {
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: var(--canvas);
+}
+
+.learning-path strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--accent-dark);
+}
+
+.learning-path p {
+  margin: 0;
+}
+
 /* Concept cards reflow into as many columns as the screen can comfortably fit. */
 .concept-list {
   display: grid;
@@ -513,11 +587,12 @@ pre code {
 }
 
 .concept-list li {
-  padding: 1.2rem;
+  padding: 1.25rem;
   border: 1px solid var(--line);
   border-radius: 0.7rem;
   background: var(--paper);
   counter-increment: concept;
+  box-shadow: 0 4px 16px rgb(22 47 70 / 4%);
 }
 
 .concept-list li::before {
@@ -544,6 +619,10 @@ pre code {
   margin: 0 0 1rem;
 }
 
+.resource-list li::marker {
+  color: var(--accent);
+}
+
 .resource-list p {
   margin: 0.25rem 0;
   color: var(--muted);
@@ -561,6 +640,10 @@ pre code {
   background: var(--paper);
   color: var(--muted);
   text-align: center;
+}
+
+.site-footer a {
+  font-weight: 650;
 }
 
 .site-footer p {
@@ -587,7 +670,7 @@ pre code {
   .hero {
     grid-template-columns: 1fr;
     gap: 1.5rem;
-    padding-top: 1rem;
+    margin-inline: 0;
   }
 
   .hero-image {
@@ -596,6 +679,10 @@ pre code {
 }
 
 @media (max-width: 480px) {
+  .header-inner {
+    padding-inline: 0.85rem;
+  }
+
   .main-nav ul {
     gap: 0.15rem;
   }
@@ -609,8 +696,53 @@ pre code {
     grid-template-columns: 1fr;
   }
 
+  .quiz-question {
+    padding: 1rem;
+  }
+
   th,
   td {
     padding: 0.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .site-header,
+  .site-footer,
+  .button-link,
+  .quiz-actions,
+  .quiz-timer {
+    display: none;
+  }
+
+  main {
+    max-width: none;
+    padding: 0;
+  }
+
+  .content-section,
+  .concept-list li {
+    break-inside: avoid;
+    box-shadow: none;
+  }
+
+  a {
+    color: inherit;
   }
 }

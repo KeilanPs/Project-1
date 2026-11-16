@@ -12,15 +12,15 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="site-name" href="index.html">Web Fundamentals</a>
-      <!-- Keep this navigation consistent so readers can move between topics on every page. -->
+      <!-- This shared menu keeps the site navigation consistent on every page. -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
           <li><a href="css-basics.html">CSS Basics</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
-          <li><a href="quiz.html">Self-Assessment Quiz</a></li>
-          <li><a href="references.html">References</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">Resources</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
@@ -32,7 +32,7 @@
       <div class="hero-copy">
         <p class="eyebrow">A beginner's field guide</p>
         <h1>Build a strong foundation for the web.</h1>
-        <p class="lead">Learn how HTML gives a page structure, how CSS shapes its appearance, and how thoughtful choices make websites work for everyone.</p>
+        <p class="lead">Learn how HTML gives a page structure, how CSS shapes its appearance, and how thoughtful choices make websites work for everyone. Start with the essentials, then explore accessibility, responsive layouts, and trusted next steps.</p>
         <a class="button-link" href="html-basics.html">Start with HTML</a>
       </div>
       <img class="hero-image" src="web-blueprint.svg" alt="A browser window diagram labeled HTML, CSS, and content">
@@ -41,11 +41,17 @@
     <section class="content-section" aria-labelledby="welcome-heading">
       <h2 id="welcome-heading">Welcome to web development</h2>
       <p>Web development is the practice of creating websites and applications for the internet. A web page begins with content and structure, then gains visual style and interactive behavior. This guide focuses on the first two foundations: HTML and CSS.</p>
-      <p>Explore the topics in order or use the contents below to jump to a section.</p>
+      <p>Browsers read HTML, build a document tree, apply CSS rules, and render the result. JavaScript can add behavior, but a clear semantic structure and usable presentation make a strong starting point even before interaction is added.</p>
+      <p>Explore the topics in order or use the learning path below to jump to a section.</p>
+      <ol class="learning-path">
+        <li><strong>01 · Structure</strong><p><a href="html-basics.html">Use HTML</a> to describe headings, paragraphs, links, and page regions.</p></li>
+        <li><strong>02 · Presentation</strong><p><a href="css-basics.html">Use CSS</a> to style content and create flexible layouts.</p></li>
+        <li><strong>03 · Practice</strong><p>Review the <a href="key-concepts.html">key concepts</a> and try the <a href="quiz.html">self-assessment</a>.</p></li>
+      </ol>
     </section>
 
     <section class="content-section" aria-labelledby="contents-heading">
-      <h2 id="contents-heading">Table of contents</h2>
+      <h2 id="contents-heading">Explore the guide</h2>
       <ol class="contents-list">
         <li><a href="html-basics.html">HTML Basics</a> — structure and meaning</li>
         <li><a href="css-basics.html">CSS Basics</a> — visual design and layout</li>
@@ -70,10 +76,17 @@
             <tr><th scope="row">Element</th><td>A piece of a page, usually defined by an HTML start tag and end tag.</td></tr>
             <tr><th scope="row">Selector</th><td>A pattern in CSS that identifies which HTML elements a rule styles.</td></tr>
             <tr><th scope="row">Responsive design</th><td>An approach that adapts a layout to different screen sizes and devices.</td></tr>
+            <tr><th scope="row">DOM</th><td>The browser's structured representation of a document, which scripts and styles can work with.</td></tr>
+            <tr><th scope="row">Accessibility</th><td>Designing and building so people with different abilities and ways of browsing can use the web.</td></tr>
           </tbody>
         </table>
       </div>
     </section>
+
+    <aside class="callout" aria-labelledby="start-heading">
+      <h2 id="start-heading">A useful first habit</h2>
+      <p>Write meaningful HTML before adding visual polish. Then check the result with a keyboard, at a narrow viewport, and with browser zoom increased.</p>
+    </aside>
   </main>
 
   <footer class="site-footer">

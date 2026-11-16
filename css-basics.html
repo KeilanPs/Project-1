@@ -12,15 +12,15 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="site-name" href="index.html">Web Fundamentals</a>
-      <!-- Keep this navigation consistent so readers can move between topics on every page. -->
+      <!-- This shared menu keeps the site navigation consistent on every page. -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="html-basics.html">HTML Basics</a></li>
           <li><a href="css-basics.html" aria-current="page">CSS Basics</a></li>
           <li><a href="key-concepts.html">Key Concepts</a></li>
-          <li><a href="quiz.html">Self-Assessment Quiz</a></li>
-          <li><a href="references.html">References</a></li>
+          <li><a href="quiz.html">Quiz</a></li>
+          <li><a href="references.html">Resources</a></li>
           <li><a href="about.html">About</a></li>
         </ul>
       </nav>
@@ -30,7 +30,7 @@
     <header class="page-intro">
       <p class="eyebrow">Topic 02</p>
       <h1>CSS: make a page clear and inviting</h1>
-      <p class="lead">CSS (Cascading Style Sheets) controls presentation: colors, typography, spacing, borders, and the layout of HTML elements.</p>
+      <p class="lead">CSS (Cascading Style Sheets) controls presentation: colors, typography, spacing, borders, and the layout of HTML elements. A shared stylesheet makes a site's visual rules easier to reuse and update.</p>
     </header>
     <section class="content-section">
       <h2>Rules, selectors, and declarations</h2>
@@ -40,6 +40,7 @@
   line-height: 1.7;
 }</code></pre>
       <p>This rule selects every paragraph and changes its text color and line spacing. An external stylesheet keeps presentation separate from the page's content.</p>
+      <p>CSS properties are inherited selectively: text color and font choices commonly pass to descendants, while margins and borders usually do not. This makes reusable defaults possible without relying on inline styles.</p>
     </section>
     <section class="content-section">
       <h2>Common selector types</h2>
@@ -49,6 +50,20 @@
         <li><strong>ID selector:</strong> <code>#main-content</code> selects the element with that unique ID.</li>
       </ul>
       <p>Use classes for reusable styling and reserve IDs for unique page landmarks or fragment links.</p>
+      <p>When rules conflict, the cascade considers origin and importance, selector specificity, and then source order. Keeping selectors predictable avoids having to override earlier rules repeatedly.</p>
+    </section>
+    <section class="content-section">
+      <h2>Understand the box model</h2>
+      <p>Each element is laid out as a box. Content sits inside padding; the border wraps the padding; and margin creates space outside the border. The <code>border-box</code> sizing rule includes padding and border in the declared width, which makes responsive sizing easier to reason about.</p>
+      <pre><code>* {
+  box-sizing: border-box;
+}
+
+.card {
+  width: min(100%, 32rem);
+  padding: 1.25rem;
+  border: 1px solid #d3e0e5;
+}</code></pre>
     </section>
     <section class="content-section">
       <h2>Layout that adapts</h2>
@@ -58,10 +73,23 @@
       </div>
       <p class="layout-caption">These three roles work together: HTML provides the structure, CSS adds the style, and responsive layout adapts the page to different screen sizes.</p>
       <p>Padding creates space inside an element; margin creates space around it. Borders, color, and type choices can reinforce hierarchy without making content harder to read.</p>
+      <pre><code>/* Let the content reflow instead of forcing a fixed column width. */
+.article-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+}</code></pre>
+      <p class="code-caption">A media query can change the grid when the available viewport becomes narrow.</p>
     </section>
     <aside class="callout">
       <h2>Keep the cascade in mind</h2>
-      <p>When multiple rules match the same element, CSS resolves conflicts using origin, importance, specificity, and source order. Prefer clear, modestly specific selectors.</p>
+      <p>Prefer clear, modestly specific selectors and a small set of design tokens for shared colors and spacing. Use relative sizing where appropriate, and check contrast and focus visibility as part of the design—not as a final patch.</p>
     </aside>
     <p class="next-step">Put the big ideas together on the <a href="key-concepts.html">key concepts page</a>.</p>
   </main>

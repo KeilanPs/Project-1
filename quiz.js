@@ -12,6 +12,7 @@ const questionPrompts = [...quizForm.querySelectorAll(".quiz-question legend")]
 
 const timeLimitSeconds = 10 * 60;
 const passThreshold = 7;
+// Keep answer keys and review labels together so scoring and feedback stay in sync.
 const questions = [
   { id: "q1", type: "text", answer: "HTML", label: "HTML" },
   { id: "q2", type: "text", answer: "CSS", label: "CSS" },
@@ -61,6 +62,7 @@ function answerMatches(question, answer) {
     return answer.toLowerCase() === question.answer.toLowerCase();
   }
   if (question.type === "checkbox") {
+    // Sorting makes checkbox order irrelevant while still requiring an exact match.
     const expected = [...question.answer].sort();
     return answer.length === question.answer.length
       && answer.every((value, index) => value === expected[index]);
@@ -78,6 +80,7 @@ function formatUserAnswer(question, answer) {
 function finishQuiz(timedOut = false) {
   if (completed) return;
 
+  // The completion guard prevents a late timer tick from submitting twice.
   completed = true;
   window.clearInterval(timerInterval);
   const elapsedSeconds = getElapsedSeconds();
